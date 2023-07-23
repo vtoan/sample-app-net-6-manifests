@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sample-app-mvc
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: sample-app-mvc
+  template:
+    metadata:
+      labels:
+        app: sample-app-mvc
+    spec:
+      containers:
+      - image: gcr.io/heptio-images/ks-guestbook-demo:0.2
+        name: sample-app-mvc,
+        resources:
+          requests:
+            cpu: 100m
+            memory: 128Mi
+          limits:
+            cpu: 250m
+            memory: 256Mi
+        ports:
+        - containerPort: 80
