@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: vtoansampleappnet 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: vtoansampleappnet
+  template:
+    metadata:
+      labels:
+        app: vtoansampleappnet 
+    spec:
+      containers:
+        - name: vtoansampleappnet 
+          image: testingacr1608.azurecr.io/vtoansampleappnet
+          ports:
+          - containerPort: 80
