@@ -13,14 +13,7 @@ spec:
         app: sampleappmvc
     spec:
       containers:
-      - image: gcr.io/heptio-images/ks-guestbook-demo:0.2
-        name: sampleappmvc,
-        resources:
-          requests:
-            cpu: 100m
-            memory: 128Mi
-          limits:
-            cpu: 250m
-            memory: 256Mi
-        ports:
-        - containerPort: 80
+       - name: sampleappmvc,
+        image: testingacr1608.azurecr.io/vtoansampleappnet
+          ports:
+          - containerPort: 80
