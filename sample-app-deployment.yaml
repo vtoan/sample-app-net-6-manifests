@@ -13,7 +13,7 @@ spec:
         app: sampleappmvc
     spec:
       containers:
-       - name: sampleappmvc,
-        image: testingacr1608.azurecr.io/vtoansampleappnet
+       - name: sampleappmvc
+         image: testingacr1608.azurecr.io/vtoansampleappnet
           ports:
           - containerPort: 80
